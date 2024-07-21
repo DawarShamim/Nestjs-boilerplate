@@ -57,7 +57,21 @@ export class OperatorService {
     const [result] = await this.operatorModel.aggregate([
       {
         $facet: {
-          documents: [{ $skip: skip }, { $limit: limit }],
+          documents: [
+            {
+              $project: {
+                _id: 1,
+                firstName: 1,
+                lastName: 1,
+                username: 1,
+                email: 1,
+                role: 1,
+                isSuperAdmin: 1,
+              },
+            },
+            { $skip: skip },
+            { $limit: limit },
+          ],
           totalCount: [{ $count: 'value' }],
         },
       },
