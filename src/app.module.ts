@@ -7,6 +7,7 @@ import { LoggerMiddleware } from './middleware/logger.middleware';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { BooksModule } from './books/book.module';
+import { OperatorModule } from './operator/operator.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { BooksModule } from './books/book.module';
     AuthModule,
     UsersModule,
     BooksModule,
+    OperatorModule,
   ],
   controllers: [AppController],
   providers: [AppService],

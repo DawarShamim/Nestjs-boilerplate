@@ -7,7 +7,7 @@ export class LoggerMiddleware implements NestMiddleware {
   private readonly morganMiddleware: any;
 
   constructor() {
-    this.morganMiddleware = morgan('combined'); // or any other format like 'tiny', 'short', etc.
+    this.morganMiddleware = morgan('dev'); // or any other format like 'tiny', 'short', etc.
   }
 
   use(req: Request, res: Response, next: NextFunction) {
