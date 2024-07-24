@@ -11,8 +11,8 @@ export function paginationParams(dto: PaginationDto): {
   limit: number;
   skip: number;
 } {
-  const page = dto.page ?? 1; // Default to 1 if page is undefined
-  const limit = dto.limit ?? 10; // Default to 10 if limit is undefined
+  const page = Number(dto.page) ?? 1; // Default to 1 if page is undefined
+  const limit = Number(dto.limit) ?? 10; // Default to 10 if limit is undefined
   const skip = (page - 1) * limit;
   return { page, limit, skip };
 }
