@@ -8,6 +8,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { BooksModule } from './books/book.module';
 import { OperatorModule } from './operator/operator.module';
+import { GatewaysModule } from './gateways/gateway.module';
 
 @Module({
   imports: [
@@ -25,6 +26,8 @@ import { OperatorModule } from './operator/operator.module';
     UsersModule,
     BooksModule,
     OperatorModule,
+    GatewaysModule,
+    GatewaysModule,
   ],
   controllers: [AppController],
   providers: [AppService],
