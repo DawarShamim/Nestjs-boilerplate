@@ -13,12 +13,10 @@ export class SocketGateway implements OnGatewayConnection {
   private server: Server;
 
   // constructor(private readonly socketService: SocketService) {}
-
   handleConnection(socket: Socket): void {
     console.log(`client initialized ${socket.id}`);
     // this.socketService.handleConnection(socket);
   }
-
   // Implement other Socket.IO event handlers and message handlers
   @SubscribeMessage('msgToServer')
   handleMessage(client: Socket, text: string): void {

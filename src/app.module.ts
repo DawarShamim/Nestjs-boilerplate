@@ -8,7 +8,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { BooksModule } from './books/book.module';
 import { OperatorModule } from './operator/operator.module';
-import { SocketGateway } from './socket.gateway';
+import { SocketGateway } from './socket/socket.gateway';
 
 @Module({
   imports: [
