@@ -1,3 +1,4 @@
+import { HttpException } from '@nestjs/common';
 import { PaginationDto } from '../dto/pagination.dto';
 export interface PaginationResult {
   currentPage: number;
@@ -31,4 +32,19 @@ export function Pagination({ totalItems, page, limit }): PaginationResult {
     limit,
     totalItems,
   };
+}
+interface ResponseData {
+  [key: string]: string | number | boolean;
+}
+
+export function successHandler(message: string, data: ResponseData) {
+  return { message, ...data };
+}
+
+export function failureHandler(
+  statusCode: number,
+  message: string,
+  data: ResponseData,
+) {
+  throw new HttpException(message, statusCode, { ...data });
 }

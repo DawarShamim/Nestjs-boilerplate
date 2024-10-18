@@ -6,9 +6,9 @@ import { UsersModule } from './users/users.module';
 import { LoggerMiddleware } from './middleware/logger.middleware';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { BooksModule } from './books/book.module';
 import { OperatorModule } from './operator/operator.module';
 import { SocketGateway } from './socket/socket.gateway';
+import { MailModule } from './mail/mail.module';
 
 @Module({
   imports: [
@@ -24,8 +24,8 @@ import { SocketGateway } from './socket/socket.gateway';
     }),
     AuthModule,
     UsersModule,
-    BooksModule,
     OperatorModule,
+    MailModule,
   ],
   controllers: [AppController],
   providers: [AppService, SocketGateway],
