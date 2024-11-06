@@ -3,20 +3,20 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { CreateOperatorDto } from './dto/create-operator.dto';
-import { UpdateOperatorDto } from './dto/update-operator.dto';
+import { CreateOperatorDto } from '../dto/create-operator.dto';
+import { UpdateOperatorDto } from '../dto/update-operator.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 // import { IOperator } from './interfaces/operator.interface';
-import { Operator, OperatorDocument } from './schemas/operator.schema';
-import { PaginationDto } from 'src/common/dto/pagination.dto';
+import { Operator, OperatorDocument } from '../schemas/operator.schema';
+import { PaginationDto } from 'src/utils/common/dto/pagination.dto';
 import {
   getDocumentTotal,
   Pagination,
   paginationParams,
   PaginationResult,
-} from 'src/common/helpers/utility.helpers';
-import { AdminLoginDto } from './dto/admin-login.dto';
+} from 'src/utils/common/helpers/utility.helpers';
+import { AdminLoginDto } from '../dto/admin-login.dto';
 import * as bcrypt from 'bcrypt';
 @Injectable()
 export class OperatorService {

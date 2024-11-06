@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { OperatorController } from './operator.controller';
-import { OperatorService } from './operator.service';
+import { OperatorController } from '../operator.controller';
+import { OperatorService } from '../../services/operator.service';
 
 describe('OperatorController', () => {
   let controller: OperatorController;

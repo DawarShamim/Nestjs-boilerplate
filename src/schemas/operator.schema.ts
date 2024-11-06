@@ -4,7 +4,7 @@ import {
   RoleEnum,
   ActiveStatusEnum,
   ACTIVE,
-} from 'src/common/constants/app.constants';
+} from 'src/utils/common/constants/app.constants';
 import * as bcrypt from 'bcrypt';
 import { Exclude } from 'class-transformer';
 

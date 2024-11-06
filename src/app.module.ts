@@ -3,13 +3,14 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
-import { LoggerMiddleware } from './middleware/logger.middleware';
+import { LoggerMiddleware } from './utils/middleware/logger.middleware';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { OperatorModule } from './operator/operator.module';
 import { SocketGateway } from './socket/socket.gateway';
 import { MailModule } from './mail/mail.module';
-
+import { OperatorController } from './controllers/operator.controller';
+import { OperatorService } from './services/operator.service';
+import { Operator, OperatorSchema } from './schemas/operator.schema';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -22,13 +23,16 @@ import { MailModule } from './mail/mail.module';
       }),
       inject: [ConfigService],
     }),
+    MongooseModule.forFeature([
+      { name: Operator.name, schema: OperatorSchema },
+    ]),
     AuthModule,
     UsersModule,
-    OperatorModule,
+
     MailModule,
   ],
-  controllers: [AppController],
-  providers: [AppService, SocketGateway],
+  controllers: [AppController, OperatorController],
+  providers: [AppService, SocketGateway, OperatorService],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {

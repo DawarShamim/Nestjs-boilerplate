@@ -3,10 +3,10 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 // import { AllExceptionsFilter } from './filters/all-exceptions.filter';
-import { ValidationException } from './filters/ValidationException.filter';
+import { ValidationException } from './utils/filters/ValidationException.filter';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { IoAdapter } from '@nestjs/platform-socket.io';
-import { AppClusterService } from './app-cluster.service';
+// import { AppClusterService } from './app-cluster.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -48,6 +48,6 @@ async function bootstrap() {
 
   await app.listen(80);
 }
-// bootstrap();
+bootstrap();
 // intializing server instances with clusters
-AppClusterService.clusterize(bootstrap);
+// AppClusterService.clusterize(bootstrap);

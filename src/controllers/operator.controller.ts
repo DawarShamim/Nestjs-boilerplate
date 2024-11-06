@@ -18,12 +18,12 @@ import {
   ApiBody,
 } from '@nestjs/swagger';
 
-import { OperatorService } from './operator.service';
-import { CreateOperatorDto } from './dto/create-operator.dto';
-import { UpdateOperatorDto } from './dto/update-operator.dto';
-import { AdminLoginDto } from './dto/admin-login.dto';
-import { Operator } from './schemas/operator.schema';
-import { PaginationDto } from 'src/common/dto/pagination.dto';
+import { OperatorService } from '../services/operator.service';
+import { CreateOperatorDto } from '../dto/create-operator.dto';
+import { UpdateOperatorDto } from '../dto/update-operator.dto';
+import { AdminLoginDto } from '../dto/admin-login.dto';
+import { Operator } from '../schemas/operator.schema';
+import { PaginationDto } from '../utils/common/dto/pagination.dto';
 
 @ApiTags('operators')
 @Controller('operator')

@@ -1,4 +1,4 @@
-import { RoleEnum } from './../../common/constants/app.constants';
+import { RoleEnum } from '../utils/common/constants/app.constants';
 import { IsString, IsEnum, IsEmail, IsStrongPassword } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
